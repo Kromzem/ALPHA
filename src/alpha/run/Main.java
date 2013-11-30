@@ -4,11 +4,15 @@
  */
 package alpha.run;
 
+import org.newdawn.slick.AppGameContainer;
+
 /**
  *
  * @author Bobthepeanut
  */
 public class Main {
+	
+	private AppGameContainer apg;
 
 	/**
 	 * @param args the command line arguments
