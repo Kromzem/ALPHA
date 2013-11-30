@@ -12,6 +12,7 @@ import org.newdawn.slick.AppGameContainer;
  */
 public class Main {
 	
+        private String Hello = "Hello BobThePeanut ;)";
 	private AppGameContainer apg;
 
 	/**
