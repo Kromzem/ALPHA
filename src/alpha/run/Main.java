@@ -5,20 +5,22 @@
 package alpha.run;
 
 import org.newdawn.slick.AppGameContainer;
+import org.newdawn.slick.ScalableGame;
+import org.newdawn.slick.SlickException;
 
 /**
  *
  * @author Bobthepeanut
  */
 public class Main {
-	
-    private String Hello = "Hello Kromzem ;)";
-	private AppGameContainer apg;
+	private static AppGameContainer apg;
 
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String[] args) {
-		// TODO code application logic here
+	public static void main(String[] args) throws SlickException {
+		apg = new AppGameContainer(new Game());
+		apg.setDisplayMode(1920, 1080, true);
+		apg.start();
 	}
 }
