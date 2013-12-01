@@ -19,7 +19,7 @@ public class Main {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) throws SlickException {
-		apg = new AppGameContainer(new Game());
+		apg = new AppGameContainer(new ScalableGame(new Game(), 1920, 1080, true));
 		apg.setDisplayMode(1920, 1080, true);
 		apg.start();
 	}

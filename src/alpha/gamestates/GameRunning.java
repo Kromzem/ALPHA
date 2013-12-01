@@ -10,6 +10,11 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import alpha.data.ImageData;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.newdawn.slick.Image;
+
 /**
  *
  * @author Bobthepeanut
@@ -23,12 +28,20 @@ public class GameRunning extends BasicGameState{
 
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		System.out.println("Initialised");
+		ImageData.getInstance().initialize();
 	}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		g.fillRect(0, 0, gc.getWidth(), gc.getHeight());
+		HashMap<String, Image> categories = ImageData.getInstance().getCategories();
+		HashMap<String, Image> elements = ImageData.getInstance().getElements();
+		Iterator<Image> i = categories.values().iterator();
+		int widthOffset = 0;
+		while(i.hasNext()) {
+			Image img = i.next();
+			img.draw(widthOffset, 0);
+			widthOffset += img.getWidth();
+		}
 	}
 
 	@Override

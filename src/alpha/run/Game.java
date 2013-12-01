@@ -23,7 +23,6 @@ public class Game extends StateBasedGame {
 	@Override
 	public void initStatesList(GameContainer gc) throws SlickException {
 		addState(new GameRunning());
-		System.out.println("What is dat shit?");
 	}
 	
 }
